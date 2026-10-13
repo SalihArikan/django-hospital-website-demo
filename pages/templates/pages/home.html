@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sağ Salim Hastanesi</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #0b6e99;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header a {
+            color: white;
+            margin-right: 15px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* bullets look odd when centered, so remove them */
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sağ Salim Hastanesi</h1>
+        <a href="/">Ana Sayfa</a>
+        <a href="#">Doktorlar</a>
+        <a href="{% url 'book' %}">Randevu Al</a>
+    </div>
+
+    <div class="content">
+        <h2>Hoş Geldiniz</h2>
+        <p>Uzman doktorlarımızla hizmetinizdeyiz.</p>
+
+        <h2>Bölümlerimiz</h2>
+        <ul>
+            <li>Kardiyoloji</li>
+            <li>Dahiliye</li>
+            <li>Çocuk Sağlığı</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Sağ Salim Hastanesi</p>
+    </div>
+
+</body>
+</html>

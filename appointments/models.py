@@ -1,0 +1,20 @@
+from django.db import models
+
+
+class Appointment(models.Model):
+    DEPARTMENTS = [
+        ('kardiyoloji', 'Kardiyoloji'),
+        ('dahiliye', 'Dahiliye'),
+        ('cocuk', 'Çocuk Sağlığı'),
+    ]
+
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    department = models.CharField(max_length=20, choices=DEPARTMENTS)
+    date = models.DateField()
+    time = models.TimeField()
+    note = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.date} {self.time}"

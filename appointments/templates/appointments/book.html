@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Randevu Al - Sağ Salim Hastanesi</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #0b6e99;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header a {
+            color: white;
+            margin-right: 15px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .footer {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sağ Salim Hastanesi</h1>
+        <a href="/">Ana Sayfa</a>
+        <a href="#">Doktorlar</a>
+        <a href="{% url 'book' %}">Randevu Al</a>
+    </div>
+
+    <div class="content">
+        <h2>Randevu Al</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Sağ Salim Hastanesi</p>
+    </div>
+
+</body>
+</html>
